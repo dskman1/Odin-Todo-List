@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #f5f7fb;
+    color: #111827;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.side{
+    padding: 10px;
+    background-color:beige;
+    border-radius: 20px;
+}
+
+.open-project-dialog{
+    border-radius: 20px;
+    border: none;
+    background-color: #111827;
+    color: white;
+    padding: 13px;
+    margin-bottom: 20px;
+}
+
+.open-project-dialog:hover{
+    background-color:burlywood;
+}
+
+.project-name{
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    width: 130px;
+    background-color: gray;
+}
+.project-name:hover{
+    background-color: burlywood;
+}
+
+.project-delete-button:hover{
+    background-color: black;
+}
+
+.project-delete-button{
+    width: 50px;
+    font-size: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color: gray;
+    color: red;
+}
+
+.project-container{
+    background-color: gray ;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.main{
+    padding: 20px;
+}
+
+.todos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 20px;
+}
+
+.todos > .todo-container{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color:antiquewhite;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.todo-toggle-button, .todo-delete-button{
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    align-self: center;
+    background-color:brown;
+    border: none;
+    border-radius: 5px;
+}
+
+.todo-delete-button:hover{
+    background-color: burlywood;
+}
+
+.todo-toggle-button:hover{
+    background-color: cadetblue;
+}
+
+.open-todo-dialog{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 20px;
+    border: none;
+}
+
+.open-todo-dialog:hover{
+    background-color: burlywood;
+}
+
+#dialog-form, #project-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
