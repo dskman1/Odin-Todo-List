@@ -21,9 +21,9 @@ export class Project {
         return this.name;
     }
     
-    setTodos(todosArr){
-        this.todos = todosArr;
-    }
+    // setTodos(todosArr){
+    //     this.todos = todosArr;
+    // }
 
     setId(thisId){
         this.id = thisId;
@@ -33,6 +33,16 @@ export class Project {
         this.todos = this.todos.filter(
             todo => todo.getId() !== todoId
         );
+    }
+
+    editTodos(todoId, title, desc, date, priority, notes){
+        let todo = this.todos.find(
+            todo => todo.getId() == todoId
+        );
+
+        if(todo){
+            todo.setInfo({editTitle : title, EditDescription: desc, editDueDate : date, EditPriority: priority , EditNotes : notes})
+        }
     }
 
 };

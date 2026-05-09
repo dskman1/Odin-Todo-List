@@ -88,7 +88,7 @@ export function setupEvents() {
             local();
 
             if (state.currentProjectId === projectId) {
-                state.currentProjectId = allContainer.getlastIdBeforeDeletedProject(projectId);
+                state.currentProjectId = allContainer.getLastIdBeforeDeletedProject(projectId);
             }
 
             renderProjects();
@@ -134,5 +134,48 @@ export function setupEvents() {
 
             renderTodos(state.currentProjectId);
         }
+
+        if(e.target.matches(".todo-edit-button")){
+            const parent = e.target.closest(".todo-container")
+            const todoId = parent.dataset.id;
+
+            state.currentTodoId = todoId;
+            dom.todoEditDialog.showModal()
+        }
+
+        if(e.target.matches(".close-todo-edit-dialog")){
+            dom.todoEditDialog.close()
+        }
     });
+    dom.todoEditDialog.addEventListener("click", (ev)=>{
+        if(ev.target === dom.todoEditDialog){
+            dom.todoEditDialog.close()
+        }
+    })
+       dom.todoEditForm.addEventListener("submit",(e)=>{
+        e.preventDefault()
+
+
+        const title = dom.todoEditTitle.value.trim();
+
+        if(!title) return;
+
+        allContainer.editTodo(
+            state.currentProjectId,
+            state.currentTodoId,
+            dom.todoEditTitle.value,
+            dom.todoEditDesc.value,
+            dom.todoEditDate.value,
+            dom.todoEditPriority.value,
+            dom.todoEditNotes.value
+        )
+
+        renderTodos(state.currentProjectId)
+
+        local()
+
+         dom.todoEditForm.reset();
+        dom.todoEditDialog.close();
+    })
+
 }

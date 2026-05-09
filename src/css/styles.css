@@ -87,7 +87,7 @@ html, body{
     margin: 10px;
 }
 
-.todo-toggle-button, .todo-delete-button{
+.todo-toggle-button, .todo-delete-button, .todo-edit-button{
     width: 150px;
     padding: 10px;
     margin-top: 10px;
@@ -97,7 +97,7 @@ html, body{
     border-radius: 5px;
 }
 
-.todo-delete-button:hover{
+.todo-delete-button:hover, .todo-edit-button:hover{
     background-color: burlywood;
 }
 
@@ -118,7 +118,7 @@ html, body{
     background-color: burlywood;
 }
 
-#dialog-form, #project-form{
+#dialog-form, #project-form, #edit-form{
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -5,18 +5,17 @@ export const allContainer = (()=>{
     }
 
   
-    let lastExictingIndex = 0;
+    let lastExcitingIndex = 0;
 
-    const setContainer = (arr) => Container.projects = arr;
 
-    const getlastIdBeforeDeletedProject = (projectId) =>{ 
+    const getLastIdBeforeDeletedProject = (projectId) =>{ 
 
         Container.projectsIds = Container.projectsIds.filter(
             id=> id !== projectId
         );
 
-        if(lastExictingIndex === -1) return null;
-        if(lastExictingIndex === 0){
+        if(lastExcitingIndex === -1) return null;
+        if(lastExcitingIndex === 0){
             if(Container.projectsIds.length > 0){
                 return Container.projectsIds[0]
             }else{
@@ -24,7 +23,7 @@ export const allContainer = (()=>{
             }
         };
       
-      return Container.projectsIds[lastExictingIndex - 1]
+      return Container.projectsIds[lastExcitingIndex - 1]
     }
 
     const getProjects = ()=> Container.projects;
@@ -42,7 +41,7 @@ export const allContainer = (()=>{
 
     const removeProject = (projectId) => {
 
-        lastExictingIndex = Container.projects.findIndex(project=> project.getId() === projectId);
+        lastExcitingIndex = Container.projects.findIndex(project=> project.getId() === projectId);
 
         Container.projects = Container.projects.filter(
             project => project.getId() !== projectId
@@ -65,9 +64,15 @@ export const allContainer = (()=>{
        project.removeTodo(todoId);
 
     }
+
+    const editTodo = (projectId, todoId, title, desc, date, priority, notes )=>{
+        const project = getProject(projectId);
+        if(!project) return;
+        project.editTodos(todoId, title, desc, date, priority, notes)
+    }
     
 
-    return{getProjects, getProject, addProject, removeProject, addTodo, removeTodo, getlastIdBeforeDeletedProject, setContainer}
+    return{getProjects, getProject, addProject, removeProject, addTodo, removeTodo, getLastIdBeforeDeletedProject, editTodo}
 })();
 
 

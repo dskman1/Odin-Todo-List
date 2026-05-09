@@ -24,6 +24,23 @@ export const dom = {
     todoPriority : document.querySelector("#priority"),
     todoNotes : document.querySelector("#notes"),
 
+    // edit todo elements
+    todoEditTitle: document.querySelector("#edit-title"),
+    todoEditDesc : document.querySelector("#edit-desc"),
+    todoEditDate : document.querySelector("#edit-date"),
+    todoEditPriority : document.querySelector("#edit-priority"),
+    todoEditNotes : document.querySelector("#edit-notes"),
+
+    // open and close edit todo dialog
+    todoEditDialog : document.querySelector(".todo-edit-dialog"),
+    openEditTodo : document.querySelector(".todo-edit-button"),
+    closeEditDialog : document.querySelector(".close-todo-edit-dialog"),
+
+    // edit todo form
+    todoEditForm : document.querySelector("#edit-form"),
+
+
+
     // project form elements
     projectInput : document.querySelector("#project-name"),
 };

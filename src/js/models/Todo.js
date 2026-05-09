@@ -24,6 +24,14 @@ export class Todo{
     setCompleted(thisCompleted){
         this.completed = thisCompleted;
     }
+
+    setInfo({editTitle, EditDescription="", editDueDate = "", EditPriority , EditNotes =""}){
+        this.title = editTitle;
+        this.description = EditDescription;
+        this.dueDate = editDueDate;
+        this.priority = EditPriority;
+        this.notes = EditNotes;
+    }
 }
 
 

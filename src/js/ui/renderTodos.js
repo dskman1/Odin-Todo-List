@@ -35,6 +35,10 @@ export function renderTodos(projectId){
             completed.textContent = todo.completed ? "Completed": "Not Completed"
             completed.classList.add("todo-toggle-button");
 
+            const edit = document.createElement("button");
+            edit.textContent = "Edit";
+            edit.classList.add("todo-edit-button");
+
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
             deleteButton.classList.add("todo-delete-button")
@@ -46,6 +50,7 @@ export function renderTodos(projectId){
                 priority,
                 notes,
                 completed,
+                edit,
                 deleteButton
             );
             dom.todos.append(container);

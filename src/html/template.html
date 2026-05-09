@@ -59,6 +59,30 @@
                 </dialog>
                 
                 <div class="todos"></div>
+
+                <dialog class="todo-edit-dialog">
+                    <form id="edit-form">
+                      
+                        <input type="text" name="title" id="edit-title" placeholder="title">
+
+                        <input type="text" name="description" id="edit-desc" placeholder="description">
+
+                        <label for="edit-date">Date</label>
+                        <input type="date" name="dueDate" id="edit-date">
+
+                        <label for="edit-priority">Priority</label>
+                        <select name="priority" id="edit-priority" >
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+
+                        <textarea name="notes" id="edit-notes" placeholder="notes"></textarea>
+
+                        <button type="submit" class="edit-todo">Edit Todo</button>
+                        <button type="button" class="close-todo-edit-dialog">Close</button>
+                    </form>
+                </dialog>
             </div>
         </div>
     </div>
