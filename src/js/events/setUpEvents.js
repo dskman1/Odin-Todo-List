@@ -122,8 +122,6 @@ export function setupEvents() {
                 state.currentProjectId
             );
 
-            local();
-
             const todo = project.getTodos().find(
                 todo => todo.getId() === todoId
             );
@@ -131,6 +129,8 @@ export function setupEvents() {
             if (!todo) return;
 
             todo.toggleCompleted();
+            
+            local();
 
             renderTodos(state.currentProjectId);
         }
